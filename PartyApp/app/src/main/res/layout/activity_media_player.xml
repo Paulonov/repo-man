@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/media_player_album_art"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/ic_launcher"
+        android:contentDescription="@string/album_art" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="5dp"
+        android:layout_toRightOf="@id/media_player_album_art" >
+
+        <TextView
+            android:id="@+id/media_player_title"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="2"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:scrollHorizontally="true"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:textSize="16sp"
+            android:text="@string/song_title" />
+
+        <TextView
+            android:id="@+id/media_player_album"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="2"
+            android:layout_below="@id/media_player_title"
+            android:text="@string/song_list_album_title" />
+
+        <TextView
+            android:id="@+id/media_player_artist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="2"
+            android:layout_below="@id/media_player_album"
+            android:text="@string/song_artist" />
+
+        <TextView
+            android:id="@+id/media_player_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/media_player_title"
+            android:layout_toRightOf="@id/media_player_album"
+            android:layout_marginLeft="50dp"
+            android:text="@string/song_duration" />
+
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/media_player_play_button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/media_player_album_art"
+        android:src="@drawable/ic_action_play"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="20dp"
+        android:contentDescription="@string/play_button"
+        android:onClick="playSong"/>
+
+    <ImageButton
+        android:id="@+id/media_player_pause_button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_action_pause"
+        android:layout_below="@id/media_player_album_art"
+        android:layout_toRightOf="@id/media_player_play_button"
+        android:layout_toEndOf="@id/media_player_play_button"
+        android:contentDescription="@string/pause_button"
+        android:onClick="pauseSong"/>
+
+    <ImageButton
+        android:id="@+id/media_player_stop_button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_action_stop"
+        android:layout_below="@id/media_player_album_art"
+        android:layout_toRightOf="@id/media_player_pause_button"
+        android:layout_toEndOf="@id/media_player_pause_button"
+        android:contentDescription="@string/stop_button"
+        android:onClick="stopSong"/>
+
+</RelativeLayout>
